@@ -16,7 +16,7 @@ typora-root-url: ./image
 
 环境下运行的；接下来我们需要搭建一些必要的库：
 
-![image-20250227172820400](/image-20250227172820400.png)
+![image-20250227172820400](image/image-20250227172820400.png)
 
 ```
 pip install unsloth
@@ -25,7 +25,7 @@ pip install --no-deps xformers "trl<0.9.0" peft accelerate bitsandbytes unsloth_
 
 注意：在Unsloth官方文档中（https://docs.unsloth.ai/get-started/installing-+-updating/google-colab），安装Unsloth时有一个colab-new可选依赖项，要求“trl<0.9.0”。
 
-![image-20250227172828212](/image-20250227172828212.png)
+![image-20250227172828212](image/image-20250227172828212.png)
 
 否则在后续安装过程中会出现报错：AttributeError: 'PeftModelForCausalLM' object has no attribute '_unwrapped_old_generate'`
 
@@ -44,13 +44,13 @@ pip install modelscope
 modelscope download --model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
 ```
 
-![image-20250227173005334](/image-20250227173005334.png)
+![image-20250227173005334](image/image-20250227173005334.png)
 
 ### 2.3 准备数据集
 
 模型下载完成后需要下载数据集：medical-o1-reasoning-SFT，该数据集用于微调 HuatuoGPT-o1，这是一个为高级医学推理设计的医学大语言模型。该数据集是通过 GPT-4o 构建的，GPT-4o 会搜索可验证的医学问题的解决方案，并通过医学验证器验证这些方案。
 
-![image-20250227173048734](/image-20250227173048734.png)
+![image-20250227173048734](image/image-20250227173048734.png)
 
 该数据集主要由三部分组成：Question，Complex_CoT，Response；
 
@@ -72,7 +72,7 @@ modelscope download --model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
 modelscope download --dataset FreedomIntelligence/medical-o1-reasoning-SFT
 ```
 
-![image-20250228091129635](/image-20250228091129635.png)
+![image-20250228091129635](image/image-20250228091129635.png)
 
 ## 3、微调模型
 
@@ -139,9 +139,9 @@ print(response[0].split("### Response:")[1])
 
 运行结果如下图所示：
 
-![image-20250228091715106](/image-20250228091715106.png)
+![image-20250228091715106](image/image-20250228091715106.png)
 
-![image-20250228091720572](/image-20250228091720572.png)
+![image-20250228091720572](image/image-20250228091720572.png)
 
 ### **3.2** **处理数据**
 
@@ -295,13 +295,13 @@ trainer_stats = trainer.train()
 
 训练过程如下图所示：
 
-![image-20250228092726321](/image-20250228092726321.png)
+![image-20250228092726321](image/image-20250228092726321.png)
 
 为了方便演示，此处只训练了60个epoch，大家在实操的时候可以适当调整epoch和学习率的大小，以求得最好的效果。
 
 在训练结束后，训练参数会保存到我们指定的output_dir路径下：
 
-![image-20250228093027340](/image-20250228093027340.png)
+![image-20250228093027340](image/image-20250228093027340.png)
 
 ### 3.4 加载训练参数，对话微调后的模型
 
@@ -382,4 +382,4 @@ while True:
 
 下面是微调后的模型推理结果；通过对比微调前后同一个问题的推理结果，可以发现微调后的模型回答更有逻辑性。
 
-![image-20250320112616369](/image-20250320112616369.png)
+![image-20250320112616369](image/image-20250320112616369.png)
