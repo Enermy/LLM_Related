@@ -58,3 +58,8 @@ https://github.com/Enermy/LLM_Related/tree/main/Unsloth%E5%BE%AE%E8%B0%83%E6%A8%
 介绍了模型蒸馏的方法，以及如何蒸馏Qwen2.5-1.5B-Instruct模型的详细步骤
 
 https://github.com/Enermy/LLM_Related/tree/main/Distill_deepseek
+
+### AutoDL
+
+在做实验的时候遇到算力不足等问题的话，可以从这个平台租服务器，价格也不贵
+
