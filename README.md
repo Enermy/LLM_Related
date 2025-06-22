@@ -63,3 +63,4 @@ https://github.com/Enermy/LLM_Related/tree/main/Distill_deepseek
 
 在做实验的时候遇到算力不足等问题的话，可以从这个平台租服务器，价格也不贵
 
+https://github.com/Enermy/LLM_Related/tree/main/AutoDL%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95
